@@ -1,3 +1,7 @@
+import 'package:do_it/features/Archived_Tasks/presentation/views/archived_tasks_screen.dart';
+import 'package:do_it/features/Done_Tasks/presentation/views/done_tasks_screen.dart';
+import 'package:do_it/features/Profile/presentation/views/profile_screen.dart';
+import 'package:do_it/features/Tasks/presentation/views/tasks_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -25,7 +29,10 @@ class _LayoutState extends State<Layout> {
             });
           },
           children: const [
-
+            TasksScreen(),
+            DoneTasksScreen(),
+            ArchivedTasksScreen(),
+            ProfileScreen(),
           ],
         ),
         bottomNavigationBar: NavigationBar(
@@ -38,10 +45,10 @@ class _LayoutState extends State<Layout> {
               });
             },
             destinations: [
-              NavigationDestination(icon: Icon(Iconsax.message), label: "Chat"),
-              NavigationDestination(icon: Icon(Iconsax.messages), label: "Groups"),
-              NavigationDestination(icon: Icon(Iconsax.user), label: "Contacts"),
-              NavigationDestination(icon: Icon(Iconsax.settings), label: "Settings"),
+              NavigationDestination(icon: Icon(Iconsax.task), label: "Tasks"),
+              NavigationDestination(icon: Icon(Icons.check_circle_outline), label: "Done"),
+              NavigationDestination(icon: Icon(Iconsax.archive), label: "Archived"),
+              NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
             ])
     );
   }
